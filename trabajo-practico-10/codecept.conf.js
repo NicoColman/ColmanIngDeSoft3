@@ -13,12 +13,21 @@ exports.config = {
   helpers: {
     Playwright: {
       browser: 'chromium',
-      url: 'https://github.com',
-      show: true
+      url: 'http://localhost:4200',
+      show: false
     }
   },
   include: {
     I: './steps_file.js'
   },
-  name: 'TP10'
+  
+  mocha: {
+     reporter: 'mochawesome',
+     reporterOptions: {
+       reportDir: './output',
+       reportFilename: 'mochawesome-report',
+     },
+   },
+  
+  name: 'angular-sample'
 }
